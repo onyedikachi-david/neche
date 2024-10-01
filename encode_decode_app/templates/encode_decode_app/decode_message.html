@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Decode Message</title>
+    </head>
+    <body>
+        <h1>Enter Encoded Message</h1>
+        <form method="POST">
+            {% csrf_token %}
+            <input
+                type="text"
+                name="encoded_message"
+                placeholder="Enter encoded message"
+                required
+            />
+            <button type="submit">Decode</button>
+        </form>
+
+        {% if decoded_message %}
+        <h2>Decoded Message:</h2>
+        <p>{{ decoded_message }}</p>
+        {% endif %}
+    </body>
+</html>
